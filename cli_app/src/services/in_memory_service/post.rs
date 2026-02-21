@@ -75,7 +75,7 @@ impl PostService for InMemoryPostService {
         post.content = req.content;
         post.status = req.status;
 
-        match data.items.get(&data.counter) {
+        match data.items.get(id) {
             None => {
                 anyhow::bail!("Post not found: {}", req.id)
             }

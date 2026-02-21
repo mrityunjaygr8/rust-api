@@ -10,6 +10,8 @@ pub fn configure(state: Arc<ApplicationState>) -> Router {
     Router::new()
         .route("/hello", get(handlers::hello::hello))
         .with_state(state.clone())
+        .route("/register", post(handlers::users::register))
+        .with_state(state.clone())
         .route(
             "/posts",
             get(handlers::posts::list).with_state(state.clone()),

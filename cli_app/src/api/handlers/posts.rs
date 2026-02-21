@@ -69,6 +69,9 @@ pub async fn get(
 
             Ok(Json(response))
         }
-        Err(_) => Err(AppError::NotFound),
+        Err(_) => Err(AppError::NotFound {
+            item_type: crate::model::Models::PostModel,
+            id: slug,
+        }),
     }
 }
