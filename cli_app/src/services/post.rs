@@ -1,4 +1,3 @@
-use axum::response::IntoResponse;
 use serde::{Deserialize, Serialize};
 
 use crate::model::{Post, PostStatus};
@@ -36,18 +35,7 @@ pub struct SinglePostResponse {
     pub data: Post,
 }
 
-impl IntoResponse for SinglePostResponse {
-    fn into_response(self) -> axum::response::Response {
-        todo!()
-    }
-}
-
 #[derive(Serialize)]
 pub struct ListPostsResponse {
     pub data: Vec<Post>,
-}
-impl IntoResponse for ListPostsResponse {
-    fn into_response(self) -> axum::response::Response {
-        todo!()
-    }
 }
